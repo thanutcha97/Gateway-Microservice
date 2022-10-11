@@ -3,6 +3,7 @@ import { UsersService } from './users.service';
 import { UsersController } from './users.controller';
 import {ClientsModule, Transport} from "@nestjs/microservices";
 import {UserServiceName} from "../microservice.name";
+import {UserPort} from "../port";
 
 @Module({
   imports: [
@@ -12,7 +13,7 @@ import {UserServiceName} from "../microservice.name";
         transport: Transport.TCP,
         options: {
           host: 'localhost',
-          port: 3001,
+          port: UserPort,
         },
       },
     ]),

@@ -6,6 +6,7 @@ import { UsersModule } from './users/users.module';
 import { BooksModule } from './books/books.module';
 import { AuthModule } from './auth/auth.module';
 import { BookServiceName,UserServiceName} from "./microservice.name";
+import {BookPort, UserPort} from "./port";
 
 @Module({
   imports: [
@@ -15,7 +16,7 @@ import { BookServiceName,UserServiceName} from "./microservice.name";
             transport: Transport.TCP,
             options: {
                 host: 'localhost',
-                port: 3001,
+                port: UserPort,
             },
           },
         {
@@ -23,7 +24,7 @@ import { BookServiceName,UserServiceName} from "./microservice.name";
             transport: Transport.TCP,
             options: {
                 host: 'localhost',
-                port: 3002,
+                port: BookPort,
             },
         }
           ]),
