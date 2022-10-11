@@ -5,12 +5,13 @@ import {ClientsModule, Transport} from "@nestjs/microservices";
 import { UsersModule } from './users/users.module';
 import { BooksModule } from './books/books.module';
 import { AuthModule } from './auth/auth.module';
+import { BookServiceName,UserServiceName} from "./microservice.name";
 
 @Module({
   imports: [
     ClientsModule.register([
           {
-            name: 'USERS',
+            name: UserServiceName ,
             transport: Transport.TCP,
             options: {
                 host: 'localhost',
@@ -18,7 +19,7 @@ import { AuthModule } from './auth/auth.module';
             },
           },
         {
-            name: 'BOOKS',
+            name: BookServiceName,
             transport: Transport.TCP,
             options: {
                 host: 'localhost',

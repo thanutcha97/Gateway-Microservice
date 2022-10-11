@@ -1,7 +1,7 @@
 import {HttpException, HttpStatus, Injectable} from '@nestjs/common';
 import { JwtService } from '@nestjs/jwt';
 import { UsersService } from "../users/users.service";
-import {AuthInterface} from "./interface/auth.interface";
+import { AuthInterface } from "./interface/auth.interface";
 import * as dayjs from 'dayjs';
 import * as bcrypt from 'bcrypt';
 
